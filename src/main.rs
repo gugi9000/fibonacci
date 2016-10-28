@@ -1,9 +1,12 @@
 fn main() {
-    let a = 30;
-    println!("Fibonacci af {} er {}",a,fib(a));
+    let a: [u64; 10] = [1,2,3,4,5,6,7,8,9,10];
+
+    for number in a.iter() {
+        println!("Fibonacci af {:?} er {:?}",number, fib(number.to_owned()));
+    }
 }
 
-fn fib(n:i64) -> i64 {
+fn fib(n:u64) -> u64 {
     match n {
     0 | 1   =>  n,
     _       =>  fib(n-1)+fib(n-2)
